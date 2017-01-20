@@ -1,5 +1,6 @@
 <!-- # footer.inc.php - Script 9.2 -->
-    <div class="footerBox">
+  </div>
+	  <div class="footerBox">
         <footer class="threeColumns">
             <article>
                 <h1>SJS Forum</h1>
@@ -42,6 +43,5 @@
             </article>
         </footer>
     </div>
-		</div>
 </body>
 </html>

@@ -15,7 +15,21 @@ background: #151515 */
 	color:black;
 	border: 6px solid #307D7E;
 }
-
+.wrapper {
+		display: inline-block;
+		margin-left: auto;
+		margin-right:auto;
+		text-align:center;
+		padding: .5em;	
+		margin-top: 100px;
+}
+#fixedHeader {
+	position: fixed; 
+	top: 0px; 
+	height: 115px;
+	min-width: 100%;
+	background-image: url("../images/background.png");
+}
 
 .commentForm {
 	width:100%;
@@ -235,7 +249,7 @@ header nav{
 	font-family:'AmbleRegular',Arial, Helvetica, sans-serif;
 	font-size:1.25em;
 	text-transform:uppercase;
-	margin:50px -15px 0 0;
+	margin:10px -15px 0 0;
 }
 
 header nav li	{

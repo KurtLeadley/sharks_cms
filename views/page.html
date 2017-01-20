@@ -32,8 +32,8 @@ include('comment.php');
 $time = (new \DateTime())->format('M d Y | h:i: A');
 if($user) { ?>
 	<form id="commentForm" action="" method="post" onsubmit="postComment(event);">
-			<input type="text" placeholder="Subject" id="title">
-		  <textarea class="textarea" id="comment"></textarea>
+			<input type="text" placeholder="Subject" id="title" >
+		  <textarea class="textarea" id="comment" name="comment" ></textarea>
 			<input type="hidden" id="pageID" value="<?php echo $pageID; ?>">
 			<input type="hidden" id="userID" value="<?php echo $user->getId(); ?>">
 			<input type="hidden" id="userName" value="<?php echo $user->getUserName(); ?>">

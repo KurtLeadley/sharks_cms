@@ -1,6 +1,10 @@
 <div class="all_comments" id="allComments">
 <?php
+If ($user) {
 	$sessionUserID = $user->getId();
+} else {
+	echo "<p>Please log in or register to comment</p>";
+}
 	$pageID = $_GET['id'];
 	$q = 'SELECT comments.id, comments.userID, comments.title, comments.comment, comments.pageID, users.username, users.id AS usersid, DATE_FORMAT(comments.dateAdded, "%M %e %Y | %h:%i %p") AS dateAdded 
 				FROM comments
@@ -36,7 +40,7 @@ if ($r){
 		$sessionCount = $q3->rowCount();
 		
 ?>
-<?php if ($count < 3) { ?> 
+<?php if ($count < 2) { ?> 
 <div class="comments" id="<?php echo $commentID; ?>">
 <?php } else { ?>
 <div class="comments_liked" id="<?php echo $commentID; ?>">
@@ -54,6 +58,8 @@ if ($r){
 				<form class="inlineform" id="inlineForm" action="" method="post" onsubmit="recComment(event, <?php echo $commentID; ?>)">
 					<input type="hidden" id="commentid" value="<?php echo $commentID; ?>">
 					<input type="hidden" id="userid" value="<?php echo $userID; ?>">
+					<input type="hidden" id="title" value="<?php echo $title; ?>">
+					<input type="hidden" id="comment" value="<?php echo $comment; ?>">
 	<?php	if ($sessionCount == 0) { ?>
 					<input style="display:inline;" id="recButton" type="submit" value="rec" /><?php echo " (". $count.")"; ?>
 	<?php	} else if ($sessionCount > 0) { ?>

@@ -19,9 +19,10 @@
     <![endif]-->
 </head>
 <!-- # header.inc.php - Script 9.1 -->
-<div class='wrapper'>
+
 <?php if ($user) { $sessionUsername = $user->getUserName(); $sessionUserID = $user->getId(); } else { $sessionUsername = "Please Register or Login";} ?>
 <body>
+	<div id='fixedHeader'>
     <header>
 		        <nav>
             <ul>
@@ -35,3 +36,5 @@
         </nav>
         <h1 id="main_header">SJ Shark Tank</h1>
     </header>
+	</div>
+	<div class='wrapper'>

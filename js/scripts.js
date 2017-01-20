@@ -57,8 +57,15 @@ function postComment(event) {
   event.preventDefault();
   return false;
 }
-function recComment(event, commentID) {
-  console.log(commentID);
+function recComment(event, commentID) {	
+
+	var title = document.getElementById("title").value;
+  var pageID = document.getElementById("pageID").value;
+	var userID = document.getElementById("userID").value;
+	var comment = tinyMCE.get('comment').getContent()
+	var userName = document.getElementById("userName").value;
+	var time = document.getElementById("time").value;
+	var count = document.getElementById("recButton").value;
 	
 	$.ajax
     ({
@@ -70,10 +77,18 @@ function recComment(event, commentID) {
       },
       success: function (response)
       {
-				
+				$('#' + commentID).html('<div class="divTable">' +
+																	'<div class="divTableBody">' + 
+																		'<div class="divTableRow">' +
+																			'<div class="trTitle">' + title + '</div>' +
+																		'</div>' +
+																		'</div>' +
+																	'</div>' +
+																'</div>');  
       }
-    });
-	
+    });	
 	event.preventDefault();
   return false;
 }
+
+
