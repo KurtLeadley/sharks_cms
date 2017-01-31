@@ -5,6 +5,7 @@
 #307D7E : Teal
 #FF9900 : Orange
 background: #151515 */
+
 .articleContent {
 	background-color: white;
 	margin-top: .5em;
@@ -33,6 +34,9 @@ background: #151515 */
 
 .commentForm {
 	width:100%;
+}
+#allComments a:hover {
+    color: #FF9900;
 }
 
 .comments {
@@ -65,9 +69,16 @@ background: #151515 */
 
 .trTitle {
 	font-weight:bold;
+	margin-bottom:14px;
 }
 .trUser {
 	color: #307D7E;
+	margin-top:14px;
+}
+
+.divTableCell p {
+    padding: 0;
+    margin-top: 50px 0;
 }
 body{
 	background-image: url("../images/background.png");
@@ -129,6 +140,9 @@ a:hover	{
 	color:white;
 	text-decoration:none;
 	border-bottom:3px solid #FF9900;
+}
+a:hover span {
+	color:white !important;
 }
 
 .commentlink:hover {

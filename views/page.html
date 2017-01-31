@@ -27,9 +27,11 @@ var auto_refresh = setInterval(
 				}
 			?>
 	</article>
-<?php	
-include('comment.php');
-$time = (new \DateTime())->format('M d Y | h:i: A');
+<?php
+	
+include('comment.php'); // all the comments are loaded in right here
+
+$time = (new \DateTime())->format('M d Y | h:i A');
 if($user) { ?>
 	<form id="commentForm" action="" method="post" onsubmit="postComment(event);">
 			<input type="text" placeholder="Subject" id="title" >

@@ -28,10 +28,17 @@
             <ul>
                 <li><a href="index.php">Home</a></li>
 								<li><a href="archive.php">Archives</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a href="../index.php">Stats</a></li>
 								<li><?php if ($user) { echo '<a href="logout.php">Logout</a>'; } else { echo '<a href="login.php">Login</a>'; } ?></li>
 								<li><?php if (!$user) { echo '<a href="register.php">Register</a>' ; } ?></li>
-								<li><?php if ($user) { ?> <span style="font-size: 15px !important;">Welcome <?php echo $sessionUsername ;} ?> </span></li>
+								<li><?php if ($user) { $sessionUserID = $user->getId(); ?><a href='user_page.php'> <span style="font-size: 15px !important; color:#307D7E;"><?php echo $sessionUsername ;
+										$q = $pdo->prepare("SELECT id FROM `comments` WHERE userID = :sessionUserID");
+										$q->bindParam(':sessionUserID', $sessionUserID);
+										$q->execute();
+										$r = $q->fetchAll();
+										$sessionCommentCount = $q->rowCount();
+								echo "&nbsp;(". $sessionCommentCount. " comments)</a>"; }?> </span>
+							  </li>
             </ul>
         </nav>
         <h1 id="main_header">SJ Shark Tank</h1>

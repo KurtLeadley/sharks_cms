@@ -7,7 +7,7 @@ $pdo->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 			throw new Exception('An invalid page ID was provided to this page.');
 	}
 	// Fetch the page from the database:
-	$q = 'SELECT id, creatorId, title, content, alias, image, description, DATE_FORMAT(dateAdded, "%e %M %Y") AS dateAdded FROM pages WHERE id=:id'; 
+	$q = 'SELECT id, creatorId, title, content, alias, image, description, DATE_FORMAT(dateAdded, "%b %e %Y") AS dateAdded FROM pages WHERE id=:id'; 
 	$stmt = $pdo->prepare($q);
 	$r = $stmt->execute(array(':id' => $_GET['id']));
 
