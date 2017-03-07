@@ -1,7 +1,7 @@
 <!-- # footer.inc.php - Script 9.2 -->
   </div>
 	  <div class="footerBox">
-        <footer class="threeColumns">
+        <footer class="threeColumnsFooter">
             <article>
                 <h1>SJS Forum</h1>
                 <nav>

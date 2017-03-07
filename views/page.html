@@ -31,8 +31,18 @@ var auto_refresh = setInterval(
 	
 include('comment.php'); // all the comments are loaded in right here
 
-$time = (new \DateTime())->format('M d Y | h:i A');
-if($user) { ?>
+$time = (new \DateTime())->format('M j Y | h:i A');
+if($user) { 
+		$q = $pdo->prepare("SELECT image, sig FROM users WHERE id = :sessionUserID");
+		$q->bindParam(':sessionUserID', $user->getId());
+		$q->execute();
+		$r = $q->fetchAll();
+		
+		foreach ($r as $row) {
+			$image = $row['image'];
+			$sig = $row['sig'];
+		}
+?>  
 	<form id="commentForm" action="" method="post" onsubmit="postComment(event);">
 			<input type="text" placeholder="Subject" id="title" >
 		  <textarea class="textarea" id="comment" name="comment" ></textarea>
@@ -40,6 +50,8 @@ if($user) { ?>
 			<input type="hidden" id="userID" value="<?php echo $user->getId(); ?>">
 			<input type="hidden" id="userName" value="<?php echo $user->getUserName(); ?>">
 			<input type="hidden" id="time" value="<?php echo $time; ?>">
+			<input type="hidden" id="sig" value="<?php echo $sig; ?>">
+			<input type="hidden" id="image" value="<?php echo $image; ?>">
 			<input type="submit">
 	</form>
 <?php 

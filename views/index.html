@@ -19,14 +19,14 @@ while ($page = $r->fetch()) { ?>
 		while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 			$commentCount = $row['total'];
 		?>
-			<article>
-				<h3><a href="page.php?id=<?php echo $page->getId();?>"><?php echo $page->getTitle();?></a></h3>
+			<article class="story">
+				<h3 class="blackHeader"><a class="blackHeader" href="page.php?id=<?php echo $page->getId();?>"><?php echo $page->getTitle();?></a></h3>
 				<h5><span><?php echo $page->getDateAdded(); ?></span><span style="float:right"><i class="fa fa-comments" aria-hidden="true"></i><?php echo $commentCount; ?></span></h5>
 				<h5><span>By <?php echo $page->getAlias(); ?></span></h5>
-				<a href="page.php?id=<?php echo $page->getId();?>">
+				<a class="storyImage" href="page.php?id=<?php echo $page->getId();?>">
 					<img src='<?php echo $page->getImage();?>' height='300px'/>
 				</a>
-				<p><?php echo $page->getDesc();?></p>   
+				<p class="blackText"><?php echo $page->getDesc();?></p>   
 			</article>
 		<?php 
 		}

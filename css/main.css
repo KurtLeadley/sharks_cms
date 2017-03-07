@@ -80,6 +80,13 @@ background: #151515 */
     padding: 0;
     margin-top: 50px 0;
 }
+.sigClass {
+	font-style: italic;
+	color: #307D7E;
+	font-size:15px;
+	padding:0px;
+	margin-top:10px;
+}
 body{
 	background-image: url("../images/background.png");
 	font-family:Arial, Helvetica, sans-serif;
@@ -114,7 +121,7 @@ h5 {
 	font-size: 1em;
 	font-weight: bold;
 	margin:8px 8px 8px 8px;
-	color: white;
+	color: #307D7E;
 }
 
 h1, h2, h3, h4 	{
@@ -122,6 +129,20 @@ h1, h2, h3, h4 	{
 	font-size:2.25em;
 	font-weight:normal;
 	margin:0 0 10px 0;
+}
+
+.story {
+	border: 6px solid #307D7E;
+	border-style: inset;
+}
+.story:hover {
+	background-color:#99bfbf;;
+}
+.blackText {
+	color:black;
+}
+.blackHeader {
+	padding-top:4px;
 }
 h2{
 	font-size:1.75em;
@@ -144,6 +165,17 @@ a:hover	{
 a:hover span {
 	color:white !important;
 }
+
+a.blackHeader {
+	color:black !important;
+}
+
+a.blackHeader:hover	{
+	color:#FF9900;
+	text-decoration:none;
+	border-bottom:3px solid #FF9900;
+}
+
 
 .commentlink:hover {
 	color:#FF9900;
@@ -182,13 +214,17 @@ section article,footer article{
 }
 .fullWidth article{
 	width:100%;
-
 }
 .twoColumns article{
 	width:50%;
 }
 .threeColumns article{
 	width:33.33%;
+  background-color:white;
+}
+.threeColumnsFooter article{
+	width:33.33%;
+  background-image: url("../images/background.png");
 }
 .threeColumns article.twoThirds{
 	width:66.6%;
@@ -232,6 +268,12 @@ footer ul, footer li, footer ol{
 }
 
 /*image alignment and styling*/
+
+.imageRight {
+	float:right;
+	margin:0;
+	padding:0;
+}
 
 img.alignright{
 	float:right;
